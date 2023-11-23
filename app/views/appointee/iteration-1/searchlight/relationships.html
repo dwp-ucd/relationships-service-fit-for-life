@@ -1,0 +1,23 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="background">
+    <div class="relationships">
+      <div class="head-info">
+        <p class="name">{{ data['customer-title'] }} {{ data['customer-name'] }}</p>
+        <p class="nino">{{ data['customer-national-insurance'] }}&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;{{ data['customer-dob'] }}</p>
+      </div>
+      <a href="#relationships" class="relationships-tab">&nbsp;</a>
+      <a href="relationships.html" class="relationships-tab">&nbsp;</a>
+      <a href="/appointee/iteration-1/propose/" class="appointee">Add an appointee</a>
+      <p class="housekeeping"><a href="/appointee/iteration-1/">Home</a> / <a href="javascript:history.go(-1)">Back</a></p>
+    </div>
+  </div>
+
+{% endblock %}

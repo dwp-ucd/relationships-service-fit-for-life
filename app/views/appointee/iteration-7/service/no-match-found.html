@@ -1,0 +1,36 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Cannot find a record for this person</h1>
+    <p class="govuk-body">Use a referral form to create this appointee relationship manually.</p>
+    <ul class="govuk-list">
+      <li>
+        <span class="govuk-body govuk-!-font-weight-bold">Name: </span> James Coles
+      </li>
+      <li>
+        <span class="govuk-body govuk-!-font-weight-bold">Date of birth: </span> 24 March 1993
+      </li>
+      <li>
+        <span class="govuk-body govuk-!-font-weight-bold">Postcode: </span> NE1 2ZX
+      </li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
+

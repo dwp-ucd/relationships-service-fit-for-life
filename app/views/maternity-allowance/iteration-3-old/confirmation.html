@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Relationship creation complete
+      </h1>
+      <div class="govuk-panel__body">
+        Source GUID<br><strong>{{ data['guid'] }}</strong><br><br>
+        Partner GUID<br><strong>{{ data['partner-guid'] }}</strong>
+      </div>
+    </div>
+
+    <p class="govuk-body">You will now be able to continue with your Maternity Allowance application.</p>
+
+    <h2 class="govuk-heading-m">What happens next</h2>
+
+    <p class="govuk-body">
+      You will be asked to complete the remaining questions of the Maternity Allowance application.
+    </p>
+
+    <form class="form" method="post">
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+    <p class="govuk-body">
+      <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+    </p>
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

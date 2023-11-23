@@ -1,0 +1,156 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#dop1-empty-error">Select whether you are divorced or your marriage was annulled</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Are you divorced or was your marriage annulled?
+              </h1>
+            </legend>
+            <span id="dop1-empty-error" class="govuk-error-message">
+             <span class="govuk-visually-hidden">Error:</span> Select whether you are divorced or your marriage was annulled
+           </span>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  Divorced
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="dop-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        When did you get divorced?
+                    </legend>
+                  <!--  <div id="dob-hint" class="govuk-hint">
+                      Enter the date from your {{ data['relationshipTypeName'] or '[relationship-type]' }} certificate. <br />For example, 31 3 1980
+                    </div> -->
+                    <div class="govuk-date-input" id="dop">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="divorced-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="divorced-day" name="divorced-day" type="text" autocomplete="divorced-day" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="divorced-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="divorced-month" name="divorced-month" type="text" autocomplete="divorced-month" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="divorced-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="divorced-year" name="divorced-year" type="text" autocomplete="divorced-year" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  Anulled
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="dop-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        When was your marriage annulled?
+                    </legend>
+                  <!--  <div id="dob-hint" class="govuk-hint">
+                      Enter the date from your {{ data['relationshipTypeName'] or '[relationship-type]' }} certificate. <br />For example, 31 3 1980
+                    </div> -->
+                    <div class="govuk-date-input" id="dop">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="anullment-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="anullment-day" name="anullment-day" type="text" autocomplete="anullment-day" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="anullment-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="anullment-month" name="anullment-month" type="text" autocomplete="anullment-month" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="anullment-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="anullment-year" name="anullment-year" type="text" autocomplete="anullment-year" pattern="[0-9]*" inputmode="numeric"></div>
+                      </div>
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </fieldset>
+        </div>
+
+
+
+          <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

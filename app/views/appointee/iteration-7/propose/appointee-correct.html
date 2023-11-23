@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Are the details of this appointee relationship correct?
+              </h1>
+            </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              Customer: {{ data['customer-name'] }} ({{ data['customer-national-insurance'] }})<br />
+              Appointee: {{ data['appointee-name'] }} ({{ data['appointee-national-insurance'] }})
+            </div>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes" name="appointeeCorrect" type="radio" value="appointee-correct-yes">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="appointeeCorrect" type="radio" value="appointee-correct-no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

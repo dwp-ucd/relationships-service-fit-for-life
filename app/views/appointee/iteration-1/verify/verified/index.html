@@ -1,0 +1,60 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+          idPrefix: "verified-date",
+          name: "verified-date",
+          fieldset: {
+            legend: {
+              text: "When was the appointee relationship verified?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          hint: {
+            text: "This is usually the date the customer received the BF57 form."
+          },
+          items: [
+            {
+              value: "today",
+              text: "Today"
+            },
+            {
+              value: "custom",
+              text: "A different date"
+            }
+          ]
+        }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

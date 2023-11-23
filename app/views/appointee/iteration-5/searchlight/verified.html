@@ -1,0 +1,39 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="background">
+    <div class="verified">
+      <div class="head-info">
+        <p class="name">{{ data['customer-title'] or '[Customer title]' }} {{ data['customer-name'] or '[Customer name]' }}</p>
+        <p class="nino">{{ data['customer-national-insurance'] or '[Customer National Insurance Number]' }}&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;{{ data['customer-dob'] or '[Customer Date of birth]' }}</p>
+        <a href="#relationships" class="relationships-tab">&nbsp;</a>
+      </div>
+      <a href="relationships.html" class="relationships-tab">&nbsp;</a>
+      <!--a href="/appointee/iteration-1/propose/" class="appointee">Add an appointee</a-->
+      <div class="relationship-information">
+        <p class="start">Start date</p>
+        <p class="rel">Relationship</p>
+        <p class="type">Relationship type</p>
+        <hr />
+        <p class="date">{{ data['relationship-decision-date'] or '[Decision date]' }}</p>
+        <p class="app"><a href="#nogo">{{ data['appointee-title'] or '[Appointee title]' }} {{ data['appointee-name'] or '[Appointee name]' }}</a></p>
+        <p class="type-answer">Appointee</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+
+        <form class="form" method="post" novalidate>
+          <a href="#" class="appointee-link" onclick="this.closest('form').submit();return false;">Change or remove</a>
+        </form>
+      </div>
+      <p class="housekeeping"><a href="/appointee/iteration-{{ data['iteration-number'] }}/">Home</a> / <a href="javascript:history.go(-1)">Back</a></p>
+    </div>
+  </div>
+
+
+{% endblock %}

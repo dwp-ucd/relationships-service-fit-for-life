@@ -1,0 +1,58 @@
+const express = require('express')
+const router = express.Router()
+
+Use:
+{{ data['guid'] }}
+
+
+
+// Add your routes here - above the module.exports line
+
+/*
+router.get('/relationships/start', function (req, res) {
+  const url = require('url');
+
+  // get access to URLSearchParams object
+  const search_params = url.searchParams;
+
+  // get url parameters
+  const guid = search_params.get('guid');
+
+  // "123456"
+  console.log(guid);
+});
+*/
+/*
+router.get('/relationships/start', function (req, res) {
+  const http = require('http');
+  const url = require('url');
+
+  http.createServer(function (req, res) {
+    const queryObject = url.parse(req.url,true).query;
+    console.log(queryObject);
+
+    res.writeHead(200, {'Content-Type': 'text/html'});
+    res.end('Feel free to add query parameters to the end of the url');
+  }).listen(3000);
+});
+*/
+
+
+router.get('/relationships/start', function (req, res) {
+
+  // GET /search?q=tobi+ferret
+  console.dir(req.query.guid);
+  // => 'tobi ferret'
+
+  req.session.guid = req.query.guid;
+  console.dir(req.session.guid)
+
+  res.redirect(301, '/relationships/start' + '?' + req.query.guid);
+});
+
+router.post('/relationships/start', function (req, res) {
+  //res.redirect(301, '/maternity/partner-details-guid' + '?DwpGuid=123455');
+  res.redirect(301, '/maternity/partner-details-guid');
+});
+
+module.exports = router

@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#relationship-type-error">Select if you are married or in a civil partnership</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint changed-name-error">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Are you married or in a Civil Partnership?
+              </h1>
+            </legend>
+            <span id="relationship-type-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select if you are married or in a civil partnership
+            </span>
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-type-2" name="relationship-type" type="radio" value="married">
+                <label class="govuk-label govuk-radios__label" for="relationship-type-2">
+                  Married
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="relationship-type-3" name="relationship-type" type="radio" value="civil-partnership">
+                <label class="govuk-label govuk-radios__label" for="relationship-type-3">
+                  In a civil partnership
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

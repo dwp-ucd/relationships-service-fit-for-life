@@ -1,0 +1,41 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">You have 1 task outstanding</h1>
+      <form class="form" method="post" novalidate>
+
+        <p class="govuk-body">You have 1 task outstanding.</p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li><strong>Verify or decline appointee relationship</strong><br />
+            Customer: {{ data['customer-name'] }} ({{ data['customer-national-insurance'] }})<br />
+            Appointee: {{ data['appointee-name'] }} ({{ data['appointee-national-insurance'] }})</li>
+        </ul>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

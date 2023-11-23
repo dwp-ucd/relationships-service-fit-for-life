@@ -1,0 +1,62 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Has this appointee relationship been verified or declined?
+              </h1>
+            </legend>
+            <div id="changed-name-hint" class="govuk-hint">
+              Customer: {{ data['customer-name'] or '[Customer name]' }} ({{ data['customer-national-insurance'] or '[Customer National Insurance Number]' }})<br />
+              Appointee: {{ data['appointee-name'] or '[Appointee name]' }} ({{ data['appointee-national-insurance'] or '[Appointee National Insurance Number]' }})
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="verified" name="verified-appointeeship" type="radio" value="verified">
+                <label class="govuk-label govuk-radios__label" for="verified">
+                  Verified
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="declined" name="verified-appointeeship" type="radio" value="declined">
+                <label class="govuk-label govuk-radios__label" for="declined">
+                  Declined
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "journey-choice",
+        name: "journey-choice",
+        fieldset: {
+          legend: {
+            text: "Select journey",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "propose",
+            text: "Journey one"
+          },
+          {
+            value: "verify",
+            text: "Journey two"
+          },
+          {
+            value: "scenario-1",
+            text: "Scenario 1"
+          },
+          {
+            value: "scenario-2",
+            text: "Scenario 2"
+          }
+        ]
+      }) }}
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,147 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Confirm proposed appointee relationship details</h1>
+
+      <form class="form" method="post" novalidate>
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Status
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-one-half">
+        {{govukTag({
+          text: "Proposed"
+        })}}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Relationship type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Appointee
+    </dd>
+  </div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Customer</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Customer name",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        text: data['customer-name'] or '[Customer name]',
+        classes: 'govuk-!-width-one-half'
+      }
+    },
+    {
+      key: {
+        text: "National Insurance Number"
+      },
+      value: {
+        text: data['customer-national-insurance'] or '[Customer National Insurance Number]'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: data['customer-dob'] or '[Customer Date of Birth]'
+      }
+    }
+  ]
+}) }}
+
+
+<h2 class="govuk-heading-m">Appointee</h2>
+
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Appointee name",
+        classes: 'govuk-!-width-one-half'
+      },
+      value: {
+        html: data['appointee-name'] or '[Appointee name]',
+        classes: 'govuk-!-width-one-half'
+      }
+    },
+    {
+      key: {
+        text: "National Insurance Number"
+      },
+      value: {
+        text: data['appointee-national-insurance'] or '[Appointee National Insurance Number]'
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        html: data['appointee-dob'] or '[Appointee Date of Birth]'
+      }
+    },
+    {
+      key: {
+        text: "Postcode"
+      },
+      value: {
+        html: data['appointee-postcode'] or '[Appointee postcode]'
+      }
+    },
+    {
+      key: {
+        text: "Contact number"
+      },
+      value: {
+        html: data['appointee-number'] or '[Appointee number]'
+      }
+    }
+  ]
+}) }}
+
+      <p>The proposed relationship will be saved and a visiting officer or decision maker will be assigned to verify the relationship.</p>
+      <p>You will be redirected back to Searchlight.</p>
+
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and finish"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

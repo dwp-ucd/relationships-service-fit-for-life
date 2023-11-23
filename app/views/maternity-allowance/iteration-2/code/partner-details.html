@@ -1,0 +1,155 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        About your partner
+      </h1>
+      <p>
+        We need to find out more about your self-employed {{ data['relationshipPartnerName'] }}.
+      </p>
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="first-name">
+            First name
+          </label>
+          <input class="govuk-input" id="first-name" name="first-name" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="surname">
+            Last name
+          </label>
+          <input class="govuk-input" id="surname" name="surname" type="text">
+        </div>
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What is your date of birth?
+              </h1>
+            </legend>
+            <div id="dob-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+            <div class="govuk-date-input" id="dob">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+
+      <div class="app-example__code">
+      <pre data-module="app-copy" tabindex="0"><code class="hljs html">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+              About your partner
+            </h1>
+            <p>
+              We need to find out more about your self-employed {{ data['relationshipPartnerName'] }}.
+            </p>
+
+            <form class="form" method="post">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="first-name">
+                  First name
+                </label>
+                <input class="govuk-input" id="first-name" name="first-name" type="text">
+              </div>
+
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="surname">
+                  Last name
+                </label>
+                <input class="govuk-input" id="surname" name="surname" type="text">
+              </div>
+
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                      What is your date of birth?
+                    </h1>
+                  </legend>
+                  <div id="dob-hint" class="govuk-hint">
+                    For example, 31 3 1980
+                  </div>
+                  <div class="govuk-date-input" id="dob">
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-day">
+                          Day
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-month">
+                          Month
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="dob-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" pattern="[0-9]*" inputmode="numeric"></div>
+                    </div>
+                  </div>
+
+                </fieldset>
+              </div>
+
+              <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+            </form>
+
+          </div>
+        </div>
+
+      </code></pre>
+    </div>
+
+    </div>
+  </div>
+
+{% endblock %}

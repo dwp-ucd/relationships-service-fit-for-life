@@ -1,0 +1,49 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Are you married or in a Civil Partnership?
+                </h1>
+              </legend>
+              <div class="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-type-2" name="relationship-type" type="radio" value="married">
+                  <label class="govuk-label govuk-radios__label" for="relationship-type-2">
+                    Married
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="relationship-type-3" name="relationship-type" type="radio" value="civil-partnership">
+                  <label class="govuk-label govuk-radios__label" for="relationship-type-3">
+                    In a civil partnership
+                  </label>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+          <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        About your partner
+      </h1>
+      <p>
+        We need to find out more about your self-employed [spouse/civil partner].
+      </p>
+
+      <p>
+        This will create a record about your relationship so that we can help you in future, should you need to answer similar questions.
+      </p>
+
+      <form class="form" method="post">
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+              What is the partner's GUID?
+            </label>
+          </h1>
+          <input class="govuk-input" id="partner-guid" name="partner-guid" type="text">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

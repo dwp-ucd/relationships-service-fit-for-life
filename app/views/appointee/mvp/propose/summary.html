@@ -1,0 +1,144 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Confirm proposed appointee relationship details</h1>
+
+      <form class="form" method="post" novalidate>
+
+        {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Status
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-one-half">
+        {{govukTag({
+          text: "Proposed"
+        })}}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Relationship type
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Appointee
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Customer</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Customer name
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-one-half">
+      {{ data['customer-name'] or '[Customer name]' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['customer-dob'] or '[Customer Date of Birth]' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['customer-residential-address'] or '[Customer address]' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+</dl>
+
+
+<h2 class="govuk-heading-m">Appointee</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key govuk-!-width-one-half">
+      Appointee name
+    </dt>
+    <dd class="govuk-summary-list__value govuk-!-width-one-half">
+      {{ data['appointee-name'] or '[Appointee name]' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="change/details">
+          Change<span class="govuk-visually-hidden"> appointee name</span>
+        </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['appointee-dob'] or '[Appointee Date of Birth]' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['appointee-residential-address'] or '[Appointee address]' }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      &nbsp;
+    </dd>
+  </div>
+</dl>
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Save and finish"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

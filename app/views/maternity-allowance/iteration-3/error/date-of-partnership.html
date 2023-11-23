@@ -1,0 +1,120 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#dop-cp-error">Date of {{ data['relationshipTypeAlt'] or '[[relationship-type-event]]' }} must be in the past</a>
+            </li>
+            <li>
+              <a href="#dop-cp-empty-error">Date of {{ data['relationshipTypeAlt'] or '[[relationship-type-event]]' }} must include a year</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dop-hint dop-error">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What was the date of your {{ data['relationshipTypeAlt'] or '[[relationship-type-event]]' }}?
+              </h1>
+            </legend>
+            <div id="dop-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+            <span id="dop-cp-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Date of {{ data['relationshipTypeAlt'] or '[[relationship-type-event]]' }} must be in the past
+            </span>
+            <div class="govuk-date-input" id="dop">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dop-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="dop-day" name="dop-day" type="text" value="6" autocomplete="bday-day" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dop-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="dop-month" name="dop-month" type="text" value="3" autocomplete="bday-month" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dop-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="dop-year" name="dop-year" type="text" value="2076" autocomplete="bday-year" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="dop-hint dop-error">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                What was the date of your {{ data['relationshipTypeAlt'] or '[[relationship-type-event]]' }}?
+              </h1>
+            </legend>
+            <div id="dop-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+            <span id="dop-cp-empty-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Date of {{ data['relationshipTypeAlt'] or '[[relationship-type-event]]' }} must include a year
+            </span>
+            <div class="govuk-date-input" id="dop">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dop-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dop-day" name="dop-day" type="text" value="6" autocomplete="bday-day" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dop-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dop-month" name="dop-month" type="text" value="3" autocomplete="bday-month" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dop-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="dop-year" name="dop-year" type="text" autocomplete="bday-year" pattern="[0-9]*" inputmode="numeric"></div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

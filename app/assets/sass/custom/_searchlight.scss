@@ -1,0 +1,367 @@
+.background {
+  .search {
+    display: block;
+    margin: -50px -210px 0;
+    background-image: url("/public/images/search.png");
+    height: 1380px;
+    .govuk-input {
+      margin-top: 210px;
+      margin-left: 35px;
+      width: 548px;
+      height: 50px;
+      border: 0px;
+      float: left;
+    }
+    .housekeeping {
+      position: absolute;
+      top: 1320px;
+      left: 295px;
+    }
+    a.search-button:link, a.search-button:visited, a.search-button:hover, a.search-button:active {
+      //background-image: url("/public/images/search-button.png");
+      //background-color: govuk-colour("black");
+      display: block;
+      height: 50px;
+      width: 50px;
+      text-decoration: none;
+      float: left;
+      margin-top: 210px;
+      margin-left: 5px;
+    }
+  }
+}
+.header {
+  background-image: url("/public/images/header.png");
+  display: block;
+  height: 247px;
+  width: 1384px;
+  position: fixed;
+  z-index: 1;
+  top: 0px;
+  margin-left: -210px;
+  a.relationships-tab:link, a.relationships-tab:visited, a.relationships-tab:hover, a.relationships-tab:active {
+    //background-image: url("/public/images/search-button.png");
+    //background-color: govuk-colour("black");
+    display: block;
+    height: 50px;
+    width: 120px;
+    text-decoration: none;
+    float: left;
+    position: absolute;
+    top: 180px;
+    left: 530px;
+  }
+  p.name, p.nino {
+    text-transform: uppercase;
+    color: govuk-colour("white");
+    font-weight: bold;
+    position: absolute;
+  }
+  .name {
+    font-size: 2.90em;
+    top: 69px;
+    left: 38px;
+  }
+  .nino {
+    font-size: 1.05em;
+    top: 133px;
+    left: 38px;
+  }
+  .banner {
+    background-color: #DAECF7;
+    padding: 15px;
+    position: absolute;
+    top: 90px;
+    right: 38px;
+
+    -webkit-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 1px 2px 5px 1px rgba(0,0,0,0.75);
+    p {
+      color: #48829D;
+      font-size: 0.99em;
+      margin: 0;
+      a {
+        color: #48829D;
+      }
+    }
+  }
+}
+.background {
+  a.appointee-link {
+    font-size: 19px;
+  }
+  .result {
+    background-image: url("/public/images/result.png");
+    height: 2938px;
+    width: 1384px;
+  }
+  .result-template {
+    background-image: url("/public/images/result-template.png");
+    height: 3068px;
+    width: 1384px;
+  }
+  .result, .result-template {
+    display: block;
+    position: absolute;
+    z-index: 0;
+    margin: 0 -210px;
+    top: 247px;
+    //background-image: url("/public/images/result-data.png");
+    //background-color: red;
+    .govuk-input {
+      margin-top: 165px;
+      margin-left: 35px;
+      width: 548px;
+      height: 50px;
+      border: 0px;
+      float: left;
+    }
+    .housekeeping {
+      position: absolute;
+      top: 3000px;
+      left: 143px;
+    }
+    .relationships-box{
+      position: absolute;
+      margin-top: 1900px;
+    }
+    a.appointee-link:link, a.appointee-link:visited, a.appointee-link:hover, a.appointee-link:active{
+      position: absolute;
+      top: 2280px;
+      right: 68px;
+      //margin-left: 1038px;
+    }
+    p {
+      position: absolute;
+      font-size: 1.11em;
+      font-weight: bold;
+    }
+    .personal-details {
+      position: absolute;
+      left: 426px;
+      width: 500px;
+    }
+    .name {
+      text-transform: uppercase;
+      top: 139px;
+    }
+    .dob {
+      top: 234px;
+    }
+    .nino {
+      top: 330px;
+    }
+    .gender {
+      top: 425px;
+    }
+    .address {
+      position: absolute;
+      width: 500px;
+      left: 494px;
+    }
+    .correspondence-line-1 {
+      top: 708px;
+    }
+    .correspondence-line-2 {
+      top: 735px;
+    }
+    .correspondence-line-3 {
+      top: 763px;
+    }
+    .correspondence-postcode {
+      top: 790px;
+    }
+    .correspondence-country {
+      top: 817px;
+    }
+    .residential-line-1 {
+      top: 917px;
+    }
+    .residential-line-2 {
+      top: 944px;
+    }
+    .residential-line-3 {
+      top: 971px;
+    }
+    .residential-postcode {
+      top: 999px;
+    }
+    .residential-country {
+      top: 1026px;
+    }
+    .number-mobile {
+      top: 1319px;
+    }
+    .number-home {
+      top: 1388px;
+    }
+
+    // Result information
+    .relationship-information {
+      position: absolute;
+      top: 2310px;
+      left: 67px;
+      p {
+        font-weight: normal;
+      }
+      .start, .date {
+        display: inline;
+      }
+      .rel, .app, .type-answer, .status, .status-inverse  {
+        display: inline;
+        left: 300px;
+      }
+      .type {
+        display: inline;
+        left: 500px;
+      }
+      .maintenance {
+        display: inline;
+        right: 0px;
+      }
+      .change {
+        right: 0px;
+        top: 80px;
+      }
+      hr {
+        margin-top: 35px;
+        border: 1px solid $govuk-border-colour;
+        width: 1250px;
+      }
+      .date, .app {
+        top: 50px;
+      }
+      .type-answer, .status-inverse {
+        top: 80px;
+      }
+      .status {
+        top: 110px;
+      }
+
+      a.appointee-link:link, a.appointee-link:visited, a.appointee-link:hover, a.appointee-link:active {
+        top: 50px;
+        right: 0px;
+      }
+    }
+  }
+  .relationships {
+    position: absolute;
+    background-image: url("/public/images/relationships.png");
+    height: 1047px;
+    width: 1384px;
+    display: block;
+    margin: -50px -210px 0;
+    .govuk-input {
+      margin-top: 165px;
+      margin-left: 35px;
+      width: 548px;
+      height: 50px;
+      border: 0px;
+      float: left;
+    }
+    .housekeeping {
+      position: absolute;
+      top: 980px;
+      left: 143px;
+    }
+    a.appointee-link:link, a.appointee-link:visited, a.appointee-link:hover, a.appointee-link:active{
+      position: absolute;
+      top: 385px;
+      right: 68px;
+    }
+  }
+  .verified {
+    position: absolute;
+    background-image: url("/public/images/verified.png");
+    height: 1181px;
+    width: 1384px;
+    display: block;
+    margin: -50px -210px 0;
+    .govuk-input {
+      margin-top: 165px;
+      margin-left: 35px;
+      width: 548px;
+      height: 50px;
+      border: 0px;
+      float: left;
+    }
+    .housekeeping {
+      position: absolute;
+      top: 1120px;
+      left: 142px;
+    }
+    a.appointee-link:link, a.appointee-link:visited, a.appointee-link:hover, a.appointee-link:active{
+      position: absolute;
+      top: 45px;
+      right: 0px;
+    }
+    .relationship-information {
+      position: absolute;
+      top: 430px;
+      left: 62px;
+      .start, .date {
+        display: inline;
+      }
+      .rel, .app {
+        display: inline;
+        position: absolute;
+        left: 300px;
+      }
+      .type, .type-answer {
+        display: inline;
+        position: absolute;
+        left: 500px;
+      }
+      .maintenance {
+        display: inline;
+        position: absolute;
+        right: 0px;
+      }
+      .change {
+        position: absolute;
+        right: 0px;
+        top: 80px;
+      }
+      hr {
+        border: 1px solid $govuk-border-colour;
+        width: 1250px;
+      }
+    }
+  }
+  .relationships, .verified {
+    .head-info {
+      display: block;
+      width: 1000px;
+      position: absolute;
+      left: 0px;
+        p {
+          text-transform: uppercase;
+          color: govuk-colour("white");
+          font-weight: bold;
+          position: absolute;
+        }
+        .name {
+          font-size: 2.90em;
+          top: 69px;
+          left: 38px;
+        }
+        .nino {
+          font-size: 1.05em;
+          top: 133px;
+          left: 38px;
+        }
+      }
+    a.relationships-tab:link, a.relationships-tab:visited, a.relationships-tab:hover, a.relationships-tab:active {
+      //background-image: url("/public/images/search-button.png");
+      //background-color: govuk-colour("black");
+      display: block;
+      height: 50px;
+      width: 120px;
+      text-decoration: none;
+      float: left;
+      margin-top: 180px;
+      margin-left: 530px;
+    }
+  }
+}

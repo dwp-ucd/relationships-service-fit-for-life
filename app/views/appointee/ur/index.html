@@ -1,0 +1,152 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        User Research
+      </h1>
+
+            <!-- ********************** divider *******************************************************************************************
+            ******************************************************************************************************************************* -->
+
+      <h2 class="govuk-heading-m">Round 2: XX June 2022</h2>
+
+      <p><a href="/appointee/iteration-2/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 2</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Design decisions"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>Removed the \'Are the details of this appointee relationship correct?\' because the question and the summary screen served the same purpose of confirming details and was therefore redundant.</li>
+              <li>Removed the help text on \'When was the appointee relationship verified?\' screen as there was confusion over when the verification took place in relation to the various stages of the BF57. Removing it removed ambiguity.</li>
+              <li>Removed the \'Add an appointee\' link from the last Searchlight screen as they cannot have more than one appointee at a time, once an appointee is in place.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>We believe that by removing the \'Are the details of this appointee relationship correct?\' screen, the user will notice the text at the bottom of the summary screen and we won\'t need to move it higher up to be noticed. This is because the summary screen is where the confirmation of details takes place as opposed to on the previous screen, so we believe that users will actively look for instruction for next steps based on this.</li>
+              <li>We believe that we will get more evidence to show something in Searchlight after the \'Propose\' journey if we leave it blank as it might prompt users to think what\'s happened to the information they inputted in that journey.</li>
+            </ul>'
+          }
+        },
+          {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+            <li>Number of participants: </li>
+
+            </ul>'
+          }
+        }
+      ]
+    }) }}
+
+      <!-- ********************** divider *******************************************************************************************
+      ******************************************************************************************************************************* -->
+
+      <h2 class="govuk-heading-m">Round 1: 25 May 2022</h2>
+
+      <p><a href="/appointee/iteration-1/" class="govuk-body govuk-!-font-weight-bold">Prototype iteration 1</a></p>
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+      {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+    {{ govukAccordion({
+      id: "accordion-default",
+      items: [
+        {
+          heading: {
+            text: "Design decisions"
+          },
+          content: {
+            html:
+            '<p class="govuk-body">Changes from iteration 0 (MURAL Wireframe) include:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Changed all references from \"Relationship\" to \"Appointeeship\" because it seems odd to name the process something different to what it is and also have half the journey referencing appointeeship and the second half a relationship.</li>
+              <li>On the summary screen, we\'ve chosen to reference the customer first and the appointee second. This makes more logical sense than the wireframe mockup.</li>
+              <li>Removed the final confirmation screen as it serves no purpose. The \'verified\' journey is fine, it explains that the user can find the updates in Searchlight. But the \'declined\' journey is vague as there isn\'t anything to show in searchlight, but information has been recorded, but as of now, we\'re unsure of how to show that information to users.</li>
+              <li>Changed summary headings to say \'Check...\' as it isn\'t a summary or a check your answers, not all answers can be changed.</li>
+              <li>Changed summary button to \'Confirm\' as it\'s the final page in the process.</li>
+            </ul>'
+          }
+        },
+        {
+          heading: {
+            text: "Hypotheses"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+              <li>See MURAL documents:
+                <ul class="govuk-list govuk-list--bullet">
+                  <li><a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1634053094055/7d87153f5532292a23fdb2b79569e80ed1ecc545?sender=u11c916d0c9d1ea1fb3c87693">Delegated Authority UI</a></li>
+                  <li><a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1642690584391/7fcb8305c9c09975ea517463c94e443577b8542f?sender=u11c916d0c9d1ea1fb3c87693">Appointee Journey v1</a></li>
+                  <li><a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1645181178543/ce53f20949550d4c9585baa05ed7c3b04c0eebd4?sender=u11c916d0c9d1ea1fb3c87693">Appointee Journey v2</a></li>
+                  <li><a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1645709516971/cb76ecfd84b344c6675d0bb437d3b6044104a425?sender=u11c916d0c9d1ea1fb3c87693">Appointee Journey v3</a></li>
+                  <li><a href="https://app.mural.co/t/dwpdigital7412/m/dwpdigital7412/1646756875447/98af1c472469efee238e0a5ab9aca4ceab6f4132?sender=u11c916d0c9d1ea1fb3c87693">Appointee Journey v4</a></li>
+                </ul
+              </li>
+            </ul>'
+          }
+        },
+          {
+          heading: {
+            text: "Research notes"
+          },
+          content: {
+            html: "<p class='govuk-body'>Number of participants: </p>"
+          },
+          content: {
+            html:
+            '<ul class="govuk-list govuk-list--bullet">
+
+            <li>Number of participants: 5</li>
+            <li>Overall, the prototype was positively received</li>
+            <li>Uncertainty over the process</li>
+            <li>Some misunderstanding over where users are in the overall journey at the end of appointee proposal journey</li>
+            <li>Users had questions over who would be filling in journey 2</li>
+            <li>Important that this info is reflected in PIP </li>
+            <li>Usability improvements advised for Searchlight sections</li>
+            </ul>'
+          }
+        }
+      ]
+    }) }}
+
+    <!-- ********************** divider ***************************** -->
+
+    </div>
+      </div>
+
+{% endblock %}

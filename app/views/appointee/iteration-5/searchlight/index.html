@@ -1,0 +1,20 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="background">
+    <div class="search">
+      <input class="govuk-input" id="event-name" name="event-name" type="text">
+      <form class="form" method="post" novalidate>
+        <a href="result.html" class="search-button" onclick="this.closest('form').submit();return false;">&nbsp;</a>
+      </form>
+      <p class="housekeeping"><a href="/appointee/iteration-{{ data['iteration-number'] }}/">Home</a> / <a href="javascript:history.go(-1)">Back</a></p>
+    </div>
+  </div>
+
+{% endblock %}

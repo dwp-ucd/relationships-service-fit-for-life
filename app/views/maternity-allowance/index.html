@@ -1,0 +1,45 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Relationships Service
+        <br /><strong class="govuk-tag govuk-tag--green">Green Zone</strong>
+      </h1>
+
+      <h2 class="govuk-heading-m">Maternity Allowance prototype</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-body"><a href="/maternity-allowance/iteration-1/start?guid=0123456">Iteration 1</a></li>
+        <li class="govuk-body"><a href="/maternity-allowance/iteration-2/start?guid=0123456">Iteration 2</a></li>
+        <li class="govuk-body"><a href="/maternity-allowance/iteration-3/start?guid=0123456">Iteration 3</a></li>
+        <li class="govuk-body"><a href="/maternity-allowance/iteration-4/start?guid=0123456">Iteration 4</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Postcode lookup A/B test</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li class="govuk-body"><a href="/maternity-allowance/iteration-4/partner-address">A - Is your partner's address the same as yours?</a></li>
+        <li class="govuk-body"><a href="/maternity-allowance/iteration-4/partner-postcode">B - Do you know your partner's address?</a></li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Wireframes (iterations 1 to 5)</h2>
+      <p><a href="https://dwpdigital.atlassian.net/wiki/spaces/CITI/pages/28034273304/Maternity+Allowance+Relationship+Wireframe">https://dwpdigital.atlassian.net/wiki/spaces/CITI/pages/28034273304/Maternity+Allowance+Relationship+Wireframe (Confluence document)</a></p>
+
+
+      <h2 class="govuk-heading-m">Notes</h2>
+      <p>The URL contains a GUID parameter "0123456".</p>
+      <p>This simulates an earlier authenticated source GUID that has been passed to the Relationships Service from Maternity Allowance.</p>
+      <p>Change this GUID in the URL and press enter to reload the page. This new source GUID is persisted in the URL throughout all Relationships screens.</p>
+
+    </div>
+  </div>
+
+{% endblock %}

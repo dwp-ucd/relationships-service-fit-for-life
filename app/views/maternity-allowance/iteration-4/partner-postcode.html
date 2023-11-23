@@ -1,0 +1,76 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post">
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Do you know your partner's address?
+              </h1>
+            </legend>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-radios__label" for="contact">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+
+                  <fieldset class="govuk-fieldset" role="group" aria-describedby="dop-hint">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--m" for="event-name">
+                          What is your partner's post code?
+                        </label>
+                      <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text">
+                    </div>
+
+                  </fieldset>
+
+                </div>
+
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
+                <label class="govuk-label govuk-radios__label" for="contact-2">
+                  No
+                </label>
+              </div>
+            </div>
+
+          </fieldset>
+        </div>
+
+        <button class="govuk-button govuk-!-margin-bottom-2" data-module="govuk-button">Save and continue</button>
+        <p><a href="cancel">Cancel</a><p>
+      </form>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+{% endblock %}

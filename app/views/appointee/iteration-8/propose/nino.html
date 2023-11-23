@@ -1,0 +1,46 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.go(-1)"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" method="post" novalidate>
+
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "What is the appointee's National Insurance number?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        classes: "govuk-input--width-10",
+        id: "appointee-nino",
+        name: "appointee-nino"
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

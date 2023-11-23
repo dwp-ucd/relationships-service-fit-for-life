@@ -1,0 +1,42 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  DWP Relationships
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        DWP Relationships
+      </h1>
+      <p>
+        To help make things easier for you when you talk to us, we want to help make sure information about your partner is correct.
+      </p>
+
+      <p>
+        This will create a record about your relationship so that we can help you in future, should you need to answer similar questions.
+      </p>
+
+      <p class="govuk-body govuk-!-font-weight-bold">You will need:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Your marriage or civil partnership certificate</li>
+        <li>Your partner's/ex-partner's personal information</li>
+      </ul>
+
+      <form class="form" method="post">
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+
+{% extends "layout_unbranded.html" %}
+
+{% block page_title %}
+  Searchlight
+{% endblock %}
+
+{% block content %}
+
+  <div class="header">
+    <p class="name">{{ data['customer-title'] }} {{ data['customer-name'] }}</p>
+    <p class="nino">{{ data['customer-national-insurance'] }}&nbsp;&nbsp;&nbsp;·&nbsp;&nbsp;&nbsp;{{ data['customer-dob'] }}</p>
+    <a href="#relationships" class="relationships-tab">&nbsp;</a>
+  </div>
+  <div class="background">
+    <div class="result-template">
+      <div class="personal-details">
+        <p class="name">{{ data['customer-title'] }} {{ data['customer-name'] }}</p>
+        <p class="dob">{{ data['customer-dob'] }}</p>
+        <p class="nino">{{ data['customer-national-insurance'] }}</p>
+        <p class="gender">{{ data['customer-gender'] }}</p>
+      </div>
+      <div class="address">
+        <p class="correspondence-line-1">{{ data['customer-correspondence-line-1'] }}</p>
+        <p class="correspondence-line-2">{{ data['customer-correspondence-line-2'] }}</p>
+        <p class="correspondence-line-3">{{ data['customer-correspondence-line-3'] }}</p>
+        <p class="correspondence-postcode">{{ data['customer-correspondence-postcode'] }}</p>
+        <p class="correspondence-country">{{ data['customer-correspondence-country'] }}</p>
+        <p class="residential-line-1">{{ data['customer-residential-line-1'] }}</p>
+        <p class="residential-line-2">{{ data['customer-residential-line-2'] }}</p>
+        <p class="residential-line-3">{{ data['customer-residential-line-3'] }}</p>
+        <p class="residential-postcode">{{ data['customer-residential-postcode'] }}</p>
+        <p class="residential-country">{{ data['customer-residential-country'] }}</p>
+      </div>
+      <div class="personal-details">
+        <p class="number-mobile">{{ data['customer-number-mobile'] }}</p>
+        <p class="number-home">{{ data['customer-number-home'] }}</p>
+      </div>
+      <div id="relationships" class="relationships-box">&nbsp;</div>
+
+      <div class="relationship-information">
+        <p class="start">Start date</p>
+        <p class="rel">Relationship</p>
+        <hr />
+        <p class="date">{{ data['relationship-decision-date'] or '[Decision date]' }}</p>
+        <p class="app"><strong>{{ data['appointee-title'] or '[Appointee title]' }} {{ data['appointee-name'] or '[Appointee name]' }}</strong>&nbsp;&nbsp;·&nbsp;&nbsp;<a href="#nogo">View account</a></p>
+        <p class="type-answer">Relationship type: <strong>Appointee</strong></p>
+        <p class="status"><img src="/public/images/tick.png" style="width: 15px;"> Authorised</p>
+        <!-- p class="maintenance"><a href="#nogo">View maintenance</a></p>
+        <p class="change"><a href="#nogo">Change</a></p -->
+        <form class="form" method="post" novalidate>
+          <a href="#" class="appointee-link" onclick="this.closest('form').submit();return false;">Change</a>
+        </form>
+      </div>
+      <p class="housekeeping"><a href="/appointee/iteration-{{ data['iteration-number'] }}/">Home</a> / <a href="javascript:history.go(-1)">Back</a></p>
+    </div>
+  </div>
+
+{% endblock %}
